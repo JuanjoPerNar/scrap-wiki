@@ -28,7 +28,9 @@ app.get('/', (req, res) => {
 
                             const imagenes = [];
 
-                            $artista('.mw-parser-output img').each((_, img) => {
+
+                            //Aquí pido ayuda a la IA para poder acceder a la imagen principal con el selector que usa Wikipedia para estas imágenes
+                            $artista('.mw-parser-output img').each((_, img) => { 
                                 const src = $artista(img).attr('src');
                                 if (src) {
                                     const imagenCorrecta = src.includes('//') ? `https:${src}` : `https://es.wikipedia.org${src}`;
